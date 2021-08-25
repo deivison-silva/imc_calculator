@@ -2,18 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {Key? key, required this.suffixText, required this.maxLength})
-      : super(key: key);
+  const CustomTextField({
+    Key? key,
+    required this.suffixText,
+    required this.maxLength,
+    required this.controller,
+    required this.action,
+  }) : super(key: key);
+
   final String suffixText;
   final int maxLength;
+  final TextEditingController controller;
+  final TextInputAction action;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 65.0,
+      width: 70.0,
       height: 70.0,
       child: TextFormField(
+        controller: controller,
+        textInputAction: action,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           suffixText: suffixText,
@@ -22,7 +31,7 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
         inputFormatters: [
-          FilteringTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.deny(RegExp('[-]')),
           LengthLimitingTextInputFormatter(maxLength),
         ],
       ),
