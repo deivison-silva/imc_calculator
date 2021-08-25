@@ -1,16 +1,40 @@
-# imc_calculator
+# IMC Calculator
 
-A new Flutter project.
+Aplicativo básico que realiza o cálculo do índice de massa corporal e retorna para você se está ou não no peso ideal :)
 
-## Getting Started
+## Resultado
 
-This project is a starting point for a Flutter application.
+<p float="left">
+<img src="./screenshots/home.jpg" width="200"/>
+<img src="./screenshots/screen_one.jpg" width="200"/>
+<img src="./screenshots/screen_two.jpg" width="200"/>
+</p>
+<p float="left">
+<img src="./screenshots/screen_three.jpg" width="200"/>
+<img src="./screenshots/screen_four.jpg" width="200"/>
+<img src="./screenshots/screen_five.jpg" width="200"/>
+<img src="./screenshots/screen_six.jpg" width="200"/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## Tem interesse em saber o seu IMC?
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Primeiro é necessário que vc tenha o flutter instalado na sua máquina.<br />
+Caso ainda não tenha, siga os passos deste link: [Instalação Flutter](https://flutter.dev/docs/get-started/install)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Com o mesmo instalado, execute os comandos no seu terminal ou prompt:
+
+```
+git clone https://github.com/deivison-silva/imc_calculator.git
+```
+
+```
+code imc_calculator
+```
+
+```
+flutter pub get
+```
+
+```
+flutter run
+```
