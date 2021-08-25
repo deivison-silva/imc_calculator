@@ -8,12 +8,14 @@ class CustomTextField extends StatelessWidget {
     required this.maxLength,
     required this.controller,
     required this.action,
+    required this.validator,
   }) : super(key: key);
 
   final String suffixText;
   final int maxLength;
   final TextEditingController controller;
   final TextInputAction action;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,7 @@ class CustomTextField extends StatelessWidget {
           FilteringTextInputFormatter.deny(RegExp('[-]')),
           LengthLimitingTextInputFormatter(maxLength),
         ],
+        validator: validator,
       ),
     );
   }
