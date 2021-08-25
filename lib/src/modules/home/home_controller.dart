@@ -8,6 +8,13 @@ class HomeController {
 
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  void validate() {
+    if (formKey.currentState!.validate()) {
+      calculate();
+    }
+  }
 
   void calculate() {
     double weight = double.parse(weightController.text);
