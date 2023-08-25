@@ -3,5 +3,6 @@ class Validators {
     if (value.isEmpty) {
       return 'Insira*';
     }
+    return null;
   }
 }
