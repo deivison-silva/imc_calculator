@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
+  var lstImc = <double>[];
   @override
   void dispose() {
     controller.weightController.dispose();
@@ -119,7 +120,41 @@ class _HomePageState extends State<HomePage> {
                 Visibility(
                   visible: controller.imc == 0,
                   child: CustomButton(
-                    onPressed: () => setState(() => controller.validate()),
+                    onPressed: () => setState(() {
+                      controller.validate();
+                      lstImc.add(controller.imc);
+                    }),
+                  ),
+                ),
+                SizedBox(height: 16.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 16.0,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Histórico',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: lstImc.length,
+                        itemBuilder: (_, index) {
+                          return ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            title: Text(
+                                'IMC: ${lstImc[index].toStringAsFixed(2)}'),
+                          );
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ],
